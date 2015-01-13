@@ -676,9 +676,9 @@ operation on each file. Try this command out:
 
 This command finds every file within and below the current directory, 
 and then searches each file for a line which contains the word "Volume". 
-How does it do this? The `-exec` argument allow `find` to run to the 
+How does it do this? The `-exec` argument allows `find` to run to the 
 program `grep`, multiple times, such that each file name is inserted 
-whenever the `{}` occurs (as an argument to `grep`. The trailing `\;` is used to terminate the
+whenever the `{}` occurs (as an argument to `grep`). The trailing `\;` is used to terminate the
 command, in order to end the task run by `-exec`. 
 
 We'll talk a bit more 
