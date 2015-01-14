@@ -22,19 +22,7 @@ Let's start off by relocating back to the original simplestats repository.
 Step 1 : Group up in pairs
 
 Step 2 : Add your collaborator as a remote and check to make sure you're
-connected, e.g., Beta would type the following
-
-    $ git remote add alpha https://github.com/alpha/simplestats
-    $ git remote -v
-    origin  https://github.com/YOU/simplestats (fetch)
-    origin  https://github.com/YOU/simplestats (push)
-    upstream        https://github.com/UW-Madison-ACI/simplestats (fetch)
-    upstream        https://github.com/UW-Madison-ACI/simplestats (push)
-    alpha           https://github.com/alpha/simplestats (fetch)
-    alpha           https://github.com/alpha/simplestats (push)
-    $ git fetch alpha
-
-and Alpha would type
+connected, e.g., Alpha would type the following
 
     $ git remote add beta https://github.com/beta/simplestats
     $ git remote -v
@@ -42,12 +30,24 @@ and Alpha would type
     origin  https://github.com/YOU/simplestats (push)
     upstream        https://github.com/UW-Madison-ACI/simplestats (fetch)
     upstream        https://github.com/UW-Madison-ACI/simplestats (push)
-    beta            https://github.com/beta/simplestats (fetch)
-    beta            https://github.com/beta/simplestats (push)
+    beta           https://github.com/beta/simplestats (fetch)
+    beta           https://github.com/beta/simplestats (push)
     $ git fetch beta
 
-Let's say that Beta is interested in adding a feature to the code that Beta and
-Alpha are working on. Let's look at a `median()` function.
+and Beta would type
+
+    $ git remote add alpha https://github.com/alpha/simplestats
+    $ git remote -v
+    origin  https://github.com/YOU/simplestats (fetch)
+    origin  https://github.com/YOU/simplestats (push)
+    upstream        https://github.com/UW-Madison-ACI/simplestats (fetch)
+    upstream        https://github.com/UW-Madison-ACI/simplestats (push)
+    alpha            https://github.com/alpha/simplestats (fetch)
+    alpha            https://github.com/alpha/simplestats (push)
+    $ git fetch alpha
+
+Let's say that Alpha is interested in adding a feature to the code that Alpha and
+Beta are working on. Let's look at a `median()` function.
 
 ```python
 def median(vals):
@@ -71,7 +71,7 @@ discuss potential modifications, and even push follow-up commits if necessary.
 
 ### Exercise : Issue a Pull Request and Review it
 
-For Beta:
+For Alpha:
 
 Step 1 : Start a new feature branch, named median (you could do this in single
 ```git checkout -b median``` command)
@@ -94,18 +94,18 @@ Step 4 : Update your remote
 
 Step 5 : Issue a Pull Request
 
-  - Go to your remote's page (github.com/beta/simplestats)
+  - Go to your remote's page (github.com/alpha/simplestats)
   - Click Pull Requests (on the right menu) -> New Pull Request -> Edit
-  - choose the base fork as **alpha/simplestats**, the base as **master**, the 
-    head fork as **beta/simplestats**, and the compare as **median**
+  - choose the base fork as **beta/simplestats**, the base as **master**, the 
+    head fork as **alpha/simplestats**, and the compare as **median**
   - write a descriptive message and send it off!
 
-For Alpha:
+For Beta:
 
 Step 1 : Review the pull request
 
   - Is the code clear? Does it need comments? Is it correct? Does something 
-    need clarifying? Feel free to provide in-line comments. Beta can always 
+    need clarifying? Feel free to provide in-line comments. Alpha can always 
     update their version of commits during a pull request!
 
 Step 2 : Merge the pull request using the merge button
@@ -117,21 +117,22 @@ Step 3 : Update your local repository.  At this point, all the changes exist
     $ git fetch origin
     $ git rebase origin/master
 
-For Beta:
+For Alpha:
 
+<!-- Is step 4 missing or is the numbering off? Or should this be Step 1? -->
 Step 5 : Update your local repository
 
     $ git checkout master 
-    $ git fetch alpha
-    $ git rebase alpha/master
+    $ git fetch beta
+    $ git rebase beta/master
 
 ### Exercise : Swap Roles
 
 Ok, so we've successfully issued a pull request and merged the updated code
-base. Let's swap the roles of pull requester and reviewer. This time, Alpha will
+base. Let's swap the roles of pull requester and reviewer. This time, Beta will
 add some tests to the median function.
 
-For Alpha:
+For Beta:
 
 Step 1 : Start a new feature branch, named median-tests (you could do this in
 single ```git checkout -b median-tests``` command)
@@ -155,18 +156,18 @@ Step 4 : Update your remote
 
 Step 5 : Issue a Pull Request
 
-  - Go to your remote's page (github.com/beta/simplestats)
+  - Go to your remote's page (github.com/alpha/simplestats)
   - Click Pull Requests (on the right menu) -> New Pull Request -> Edit
-  - choose the base fork as **beta/simplestats**, the base as **master**, the 
-    head fork as **alpha/simplestats**, and the compare as **median-tests**
+  - choose the base fork as **alpha/simplestats**, the base as **master**, the 
+    head fork as **beta/simplestats**, and the compare as **median-tests**
   - write a descriptive message and send it off!
 
-For Beta:
+For Alpha:
 
 Step 1 : Review the pull request
 
   - Is the code clear? Does it need comments? Is it correct? Does something 
-    need clarifying? Feel free to provide in-line comments. Alpha can always 
+    need clarifying? Feel free to provide in-line comments. Beta can always 
     update their version of commits during a pull request!
 
 Step 2 : Merge the pull request using the merge button
@@ -177,23 +178,23 @@ Step 3 : Update your local repository
     $ git fetch origin
     $ git rebase origin/master
 
-For Alpha:
-
+For Beta:
+<!-- Is step 4 missing or is the numbering off? Or should this be Step 1? -->
 Step 5 : Update your local repository
 
     $ git checkout master 
-    $ git fetch beta
-    $ git rebase beta/master
+    $ git fetch alpha
+    $ git rebase alpha/master
 
 ## git rebase/merge : Conflicts
 
 This is the trickiest part of version control, so let's take it very carefully.
 
 Remember that there are actually three remotes that have a relationship in this
-example: upstream, alpha, and beta. To put this in more realistic terms, imagine
-that the upstream branch is managed by your PI or another manager and the alpha
-and beta branches are students working on a project. All of you have a copy of
-stats.py, but Alpha and Beta have made changes to that file in sync with each
+example: upstream, beta, and alpha. To put this in more realistic terms, imagine
+that the upstream branch is managed by your PI or another manager and the beta
+and alpha branches are students working on a project. All of you have a copy of
+stats.py, but Beta and Alpha have made changes to that file in sync with each
 other. What happens if the PI (upstream) also makes changes on the same lines? A
 dreaded conflict...
 
