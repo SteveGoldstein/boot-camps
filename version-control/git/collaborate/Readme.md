@@ -106,7 +106,7 @@ Step 1 : Review the pull request
 
   - Is the code clear? Does it need comments? Is it correct? Does something 
     need clarifying? Feel free to provide in-line comments. Alpha can always 
-    update their version of commits during a pull request!
+    update his or her version of commits during a pull request!
 
 Step 2 : Merge the pull request using the merge button
 
@@ -168,7 +168,7 @@ Step 1 : Review the pull request
 
   - Is the code clear? Does it need comments? Is it correct? Does something 
     need clarifying? Feel free to provide in-line comments. Beta can always 
-    update their version of commits during a pull request!
+    update her or his version of commits during a pull request!
 
 Step 2 : Merge the pull request using the merge button
 
@@ -191,10 +191,10 @@ Step 5 : Update your local repository
 This is the trickiest part of version control, so let's take it very carefully.
 
 Remember that there are actually three remotes that have a relationship in this
-example: upstream, beta, and alpha. To put this in more realistic terms, imagine
-that the upstream branch is managed by your PI or another manager and the beta
-and alpha branches are students working on a project. All of you have a copy of
-stats.py, but Beta and Alpha have made changes to that file in sync with each
+example: upstream, alpha, and beta. To put this in more realistic terms, imagine
+that the upstream branch is managed by your PI or another manager and the alpha
+and beta branches are students working on a project. All of you have a copy of
+stats.py, but Alpha and Beta have made changes to that file in sync with each
 other. What happens if the PI (upstream) also makes changes on the same lines? A
 dreaded conflict...
 
