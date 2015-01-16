@@ -18,9 +18,10 @@ Let's start off by relocating back to the original simplestats repository.
     $ cd ~/simplestats
 
 To put this in more realistic terms, imagine that the upstream repository
-(UW-Madison-ACI) is managed by your PI and the alpha and beta forks are students
-working on a project, tasked with implementing some stats functions. Like good
-SWC followers, we'll be working in a branch, called `median`, which I will now
+(UW-Madison-ACI) is managed by your PI and Alpha and Beta are students
+working on a project tasked with implementing some stats functions. Like good
+SWC followers, Alpha and Beta have their own forks.  We'll be working in 
+a branch, called `median`, which I will now
 create. Once I have, update your local copies and remotes:
 
     $ git fetch upstream
@@ -162,9 +163,11 @@ Step 3 : Update your local repository
     $ git fetch origin
     $ git rebase origin/median
 
-## git rebase/merge : Conflicts
+<!-- Is this right?  rebase, not merge????  -->
 
-This is the trickiest part of version control, so let's take it very carefully.
+## git merge : Conflicts
+
+This part of version control can be tricky, so let's take it very carefully.
 
 Alpha and Beta have made changes to that file in sync with each other. What
 happens if the PI (upstream) also makes changes on the same lines? A dreaded
@@ -225,8 +228,8 @@ means you should replace the PI's ```median``` function with yours.
 ### Exercise : Resolve a Conflict
 
 Step 1 : Resolve the conflict by editing your stats.py file. It should
-run as expected and should look exactly like your version, but with the
-PI's changes included.
+run as expected and should look exactly like your version, but with comments
+showing the proper deference to the PI's misguided attempt.
 
 Step 2 : Add the updated version and commit
 
